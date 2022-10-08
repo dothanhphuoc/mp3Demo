@@ -1,0 +1,231 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    background-image: linear-gradient( 45deg, #355c7d 0%, #6c5b7b 50%, #c06c84 100%);
+    margin: 0 auto;
+}
+
+.music {
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 15px;
+    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4); */
+    box-shadow: 0 0 20px 2px rgba(225, 225, 225, 0.3);
+    padding: 15px 15px 30px;
+}
+
+/* background-image: linear-gradient( 45deg, rgb(65, 228, 208) 0%, rgb(250, 120, 192) 50%, rgb(155, 204, 122) 100%); */
+
+.directional {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.directional .menu-icon,
+.directional .heart-icon {
+    font-size: 20px;
+    margin: 5px 20px;
+}
+
+.music-thumb {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+}
+
+.music-thumb.is-playing{
+    /* animation */
+    animation: spinImg 8s infinite linear;
+}
+
+.music-thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    border-radius: 50%; 
+}
+
+.music-name {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 50px;
+}
+
+.play {
+    position: relative;
+}
+
+.play:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right bottom, #ff6bcb, #ffb86c);
+    transform: scale(1.5);
+    border-radius: 50%;
+}
+
+.play-inner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(149, 157,165, 0.2);
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.play-repeat,
+.play-back,
+.play-for {
+    cursor: pointer;
+}
+
+.play-repeat {
+    font-size: 20px;
+}
+
+.range {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    margin-bottom: 30px;
+}
+
+.range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    background: #eee;
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #20e3b2;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 5px rgba(0, 0, 0, 0.3);
+    margin-top: -2px;
+}
+
+/* Standard syntax */ 
+@keyframes spinImg {
+    to {
+        transform: rotate(360deg);
+    }
+    from {
+        transform: rotate(0deg);
+    }
+}
+
+.heart-red {
+    color: red;
+}
+
+.duration {
+    color: #e46285;
+}
+
+.remaining {
+    color: #03183d;
+}
+
+/* #355c7d, #6c5b7b, #c06c84 */
+
+.modal {
+    overflow-y: scroll;
+    max-height: 150px;
+    margin-top: 60px;
+    box-shadow: 0 0 20px 2px rgba(225, 225, 225, 0.3);
+    border-radius: 20px;
+}
+
+/* width */
+.modal::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+.modal::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+  
+/* Handle */
+.modal::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+  
+/* Handle on hover */
+.modal::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+}
+
+.playlist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin: 5px 20px;
+    padding: 10px;
+}
+
+
+
+.playlist img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+
+.playlist .name-song {
+    width: 200px;
+    padding-left: 10px;
+}
+
+.playlist i {
+    padding-left: 20px;
+}
+
+.information {
+    display: flex;
+    justify-content: center;
+}
+
+.yourname {
+    box-shadow: 0 0 10px 4px rgb(202, 138, 138), 0 0 0 5px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    padding: 8px;
+    margin-bottom: 40px;
+}
